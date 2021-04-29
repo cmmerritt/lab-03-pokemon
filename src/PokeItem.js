@@ -4,12 +4,14 @@ import './PokeItem.css';
 class PokeItem extends Component {
 
   render() {
+    const poke = this.props.poke;
+
     return (
       <li className="PokeItem ">
-        <h2>Venusaur</h2>
-        <img src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/003_f2.png" alt="venusaur"/>
-        <p>Type 1: Grass</p>
-        <p>Type 2: Poison</p>
+        <h2>{poke.pokemon}</h2>
+        <img src={poke.url_image} alt={poke.pokemon}/>
+        <p>Type 1: {poke.type_1}</p>
+        <p>Type 2: {poke.type_1}</p>
       </li>
     );
   }
