@@ -1,7 +1,14 @@
 .App {
   display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 20px;
+  background: peachpuff;
+}
+.App main {
+  overflow: auto;
 }
 
-img {
-  margin: 50px auto;
+.App img {
+  height: 150px;
 }

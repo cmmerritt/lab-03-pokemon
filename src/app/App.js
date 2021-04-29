@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PokeList from '../PokeList';
+import pokemon from '../static-data';
 import './App.css';
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
       <div className="App">
 
         <main>
-          <PokeList/>
+          <PokeList pokes={pokemon}/>
         </main>
       
       </div>
