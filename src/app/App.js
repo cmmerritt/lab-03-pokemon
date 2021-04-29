@@ -1,5 +1,6 @@
-import './App.css';
 import React, { Component } from 'react';
+import PokeList from '../PokeList';
+import './App.css';
 
 class App extends Component {
 
@@ -8,7 +9,7 @@ class App extends Component {
       <div className="App">
 
         <main>
-
+          <PokeList/>
         </main>
       
       </div>
