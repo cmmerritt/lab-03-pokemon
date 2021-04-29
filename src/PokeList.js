@@ -5,12 +5,14 @@ import './PokeList.css';
 class PokeList extends Component {
 
   render() {
-    const pokes = this.props.pokes;
+    const { pokes } = this.props;
+
+    console.log(pokes);
 
     return (
       <ul className="PokeList">
         {pokes.map(poke => (
-          <PokeItem key={poke._id} poke={poke.pokemon}/>
+          <PokeItem key={poke._id} poke={poke}/>
         ))}
       </ul>
     );
