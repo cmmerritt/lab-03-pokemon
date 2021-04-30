@@ -9,25 +9,38 @@ const url = 'https://pokedex-alchemy.herokuapp.com/api/pokedex';
 class App extends Component {
   state = {
     pokemon: null,
+    loading: false,
   }
 
   //moved async after componentDidMount and made into arrow function why???
 
-  componentDidMount = async () => {
-    const response = await request.get(url);
-    this.setState({ pokemon: response.body.results });
+  componentDidMount() {
+    this.fetchPokemon();
   }
 
-  handleSearch = async ({ search }) => {
-    const response = await request
-      .get(url)
-      .query({ pokemon: search });
+  async fetchPokemon(search) {
+    this.setState({ loading: true });
+    try {
+      const response = await request
+        .get(url)
+        .query({ pokemon: search });
 
-    this.setState({ pokemon: response.body.results });
+      this.setState({ pokemon: response.body.results });
+    }
+    catch (err) {
+      console.log(err);
+    }
+    finally {
+      this.setState({ loading: false });
+    }
+  }
+
+  handleSearch = ({ search }) => {
+    this.fetchPokemon(search);
   }
   
   render() {
-    const { pokemon } = this.state;
+    const { pokemon, loading } = this.state;
 
     return (
       <div className="App">
