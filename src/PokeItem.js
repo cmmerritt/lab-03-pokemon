@@ -10,7 +10,7 @@ class PokeItem extends Component {
     return (
       <li className="PokeItem">
         <h2>{poke.pokemon}</h2>
-        <img src={poke.url_image} alt={poke.pokebase}/>
+        <img src={poke.url_image} alt={poke}/>
         <p>Type 1: {poke.type_1}</p>
         <p>Type 2: {poke.type_2}</p>
       </li>

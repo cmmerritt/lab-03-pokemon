@@ -5,13 +5,13 @@ import './PokeList.css';
 class PokeList extends Component {
 
   render() {
-    const { pokes } = this.props;
+    const { pokemon } = this.props;
 
-    console.log(pokes);
+    console.log(pokemon);
 
     return (
       <ul className="PokeList">
-        {pokes.map(poke => (
+        {pokemon.map(poke => (
           <PokeItem key={poke._id} poke={poke}/>
         ))}
       </ul>
