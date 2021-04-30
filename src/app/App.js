@@ -40,7 +40,7 @@ class App extends Component {
   }
   
   render() {
-    const { pokemon, loading } = this.state;
+    const { pokemon } = this.state;
 
     return (
       <div className="App">
