@@ -8,7 +8,7 @@ const url = 'https://pokedex-alchemy.herokuapp.com/api/pokedex';
 
 class App extends Component {
   state = {
-    pokemon: [],
+    pokemon: null,
   }
 
   //moved async after componentDidMount and made into arrow function why???
@@ -27,6 +27,8 @@ class App extends Component {
   }
   
   render() {
+    const { pokemon } = this.state;
+
     return (
       <div className="App">
 
@@ -36,7 +38,10 @@ class App extends Component {
         </section>
 
         <main>
-          <PokeList pokemon={this.state.pokemon}/>
+          {pokemon && pokemon.length
+            ? <PokeList pokemon={pokemon}/>
+            : <p>Sorry no Pokemon</p>
+          }
         </main>
       
       </div>
