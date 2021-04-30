@@ -40,7 +40,7 @@ class App extends Component {
   }
   
   render() {
-    const { pokemon } = this.state;
+    const { pokemon, loading } = this.state;
 
     return (
       <div className="App">
@@ -55,6 +55,9 @@ class App extends Component {
             ? <PokeList pokemon={pokemon}/>
             : <p>Sorry no Pokemon</p>
           }
+
+          {loading && <img className="loading" src="./pokeball-spinner.gif" alt="loading"/>}
+
         </main>
       
       </div>
