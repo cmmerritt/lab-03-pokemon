@@ -12,3 +12,11 @@
 .App img {
   height: 150px;
 }
+
+.App .loading {
+  position: fixed;
+  top: 100px;
+  width: 100vw;
+  height: 300px;
+  object-fit: contain;
+}
