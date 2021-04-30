@@ -27,7 +27,6 @@ class App extends Component {
   }
   
   render() {
-    const { pokemon } = this.state;
     return (
       <div className="App">
 
